@@ -1,7 +1,13 @@
 {
   "/_app": "pages/_app.js",
+  "/AboutMe": "pages/AboutMe.html",
+  "/Components/Navbar": "pages/Components/Navbar.html",
+  "/Components/NavItem": "pages/Components/NavItem.html",
+  "/Homepage": "pages/Homepage.html",
+  "/Projects": "pages/Projects.html",
+  "/Components/Layout": "pages/Components/Layout.html",
+  "/": "pages/index.html",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Projects": "pages/Projects.js",
-  "/": "pages/index.js"
+  "/404": "pages/404.html"
 }
