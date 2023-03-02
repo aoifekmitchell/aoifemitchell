@@ -1,0 +1,143 @@
+body {
+    /* background-color: #c5d5cb; */
+    /* background-color: #e3efcf; */
+    /* background-color: #f8e5e5; */
+    /* background-color: #c39ea0; */
+    /* background-color: #e3e3e3; */
+    background-image: linear-gradient(to bottom right, #33475b, #0033CC, #FF77CC, rgb(255, 122, 89));
+}
+.links{
+    text-decoration:none;
+}
+
+.Title{
+    font-weight: bold;
+}
+.nav__menu-list{
+    list-style: none;
+    text-align: center;
+    margin: 10px;
+	width: 900px;
+	font-family: sans-serif;
+    position: relative;
+    left: 50px;
+    top: -50px;
+}
+nav{
+    list-style: none;
+}
+a.nav__item {
+    /* display: block; */
+    width: 150px;
+    float: left;
+    margin-left: 2px;
+    /* margin-right: 0px; */
+    background-color: #dddddd;
+    /* border: 3px solid #000; */
+    border-radius: 5px;
+    text-decoration:none;
+    box-shadow: 0px 0px 5px #fff;
+
+}
+
+a.nav__item:hover{
+	background-color: grey;
+	color:purple;
+}
+
+.navlogo{
+  /* width: 4%;
+  height: 10%; */
+  width: 3%;
+  height: 8%;
+  border-radius: 30%; 
+  background-color:gainsboro;
+  box-shadow: 0px 0px 5px #fff;
+}
+/* width: 4%;
+height: 10%; */
+
+
+svg.svg-inline--fa.fa-linkedin{
+    padding: 20px;
+    font-size: 30px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+  }
+svg.svg-inline--fa.fa-google{
+    padding: 20px;
+    font-size: 30px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+svg.svg-inline--fa.fa-phone{
+    padding: 20px;
+    font-size: 30px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+
+  }
+
+.ContactDetails {
+    bottom: auto;
+    /* position: absolute; */
+    width: 30%;
+    margin: 0 auto ;
+}
+h1{
+    text-align: center;
+    width: 30%;
+    margin: auto;  
+}
+p {
+    width: 30%;
+    text-align: center;
+    padding-top: 10px;
+    margin: auto;  
+}
+table {
+    /* border: 1px solid black; */
+    table-layout: fixed;
+    width: 80%;
+    border-collapse: collapse;
+    border: 3px solid purple;
+    text-align: center;
+    margin-top: 20px;
+	/* padding-top: 10px; */
+    /* margin-left: auto;
+    margin-right: auto; */
+  }
+
+
+  th, td {
+    table-layout: fixed;
+    width: 80%;
+    height: 30px;
+    border-collapse: collapse;
+    border: 3px solid purple;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+.table_header{
+     margin-left:37%;
+
+}
+.Quotes{
+  font-size: medium;
+  font-style: oblique;
+  text-align: center;
+  margin-top: 30%;
+}
+.AboutMe{
+  font-style:normal;
+  font-stretch:extra-condensed;
+
+}
+.wrapper{
+  min-height: 100vh;
+}

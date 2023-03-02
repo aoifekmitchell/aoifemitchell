@@ -1,0 +1,35 @@
+npm run dev 
+
+- navigation bar 
+- progress bar 
+- Rotating /wavey text of "More projects to come"
+- Small paragraph on about me page
+- 2 projects per topic linked to my github 
+-> 2 NLP 
+-> 2 Time Series 
+-> 2 Pytorch
+-> 2 OpenCV
+-> 1 Reinforcement Learning 
+-> 1 reccomender system 
+-> 1 Bioinformatics
+-> 1 Java 
+-> 1 SQL 
+-> 1 Javascript (weather app)
+->  browser extention 
+-> piktionary 
+-> Spotify clone (music reccomender system)
+-> ecommerce shop 
+-> https://www.projectpro.io/article/time-series-projects/444#mcetoc_1fa83alei18
+-> build a drinking game app -> phsych 
+->https://docs.flutter.dev/get-started/install/macos
+
+
+
+(transformer) 
+generate hello in random lanugae from google translate api 
+https://developers.google.com/apps-script/reference/language/language-app
+
+
+https://cloud.google.com/translate/docs/languages
+
+
