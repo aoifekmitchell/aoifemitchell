@@ -1,13 +1,8 @@
 {
   "/_app": "pages/_app.js",
-  "/AboutMe": "pages/AboutMe.html",
-  "/Components/Navbar": "pages/Components/Navbar.html",
-  "/Components/NavItem": "pages/Components/NavItem.html",
-  "/Homepage": "pages/Homepage.html",
-  "/Projects": "pages/Projects.html",
-  "/Components/Layout": "pages/Components/Layout.html",
-  "/": "pages/index.html",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
+  "/Projects": "pages/Projects.js",
+  "/AboutMe": "pages/AboutMe.js",
+  "/": "pages/index.js"
 }

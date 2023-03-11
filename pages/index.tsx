@@ -1,12 +1,10 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import {useRef} from 'react';
-import { motion, useScroll,useTransform, useInView} from 'framer-motion';
+import { motion, useInView} from 'framer-motion';
 import MyLogo from '/public/images/AOIFE_MITCHELL.svg';
-import MyPhoto from '/public/images/headshot.svg';
 import { useState } from "react";
-import HomepageStyles from './styles/Homepage.module.css'
-import Link from 'next/link';
+import HomepageStyles from './styles/Homepage.module.css';
+
 
 export default function Home(){
 
@@ -28,20 +26,14 @@ export default function Home(){
     };
 
     // Navigation bar 
-    //   
     const ref = useRef(null)
     const isInView = useInView(ref)
 
-
-
-
-
     return (
-      <div> 
+      <div className='wrapper'> 
         <motion.div
             className="wave"
             whileInView={{ scale: [1.0, 1.7, 1.0] }}
-            // animate={{ rotate: [10, 0, -10, 0, 10, 0, -10, 0, 10, 0, -10, 0] }}
             animate={{ rotate: [0, 5, 0, -5, 0, 5, 0, -5, 0, 5, 0, -5] }}
             transition={{
               rotate: { duration: 1.2, repeat: Infinity, repeatDelay: 4 },
@@ -59,16 +51,17 @@ export default function Home(){
                       className="words"
                       initial="hidden" 
                       whileInView="visible" 
-                      // viewport={{once: true}}
                       animate="visible" 
                       variants={{
                           hidden: {
+                              // x: 800,
+                              // x: 600,
                               x: 800,
                               scale: .5,
                               opacity: 0
                           },
                           visible: {
-                              x: 70,
+                              x: 10,
                               scale: 1,
                               opacity: 1,
                               transition: {
@@ -78,8 +71,8 @@ export default function Home(){
                               }
                           },
                           }}>
-                        <h1 className="title">
-                            Wecome to my Homepage 
+                        <h1 className= {HomepageStyles.title}>
+                            Welcome to my Homepage
                         </h1>
 
           </motion.div>
@@ -93,8 +86,6 @@ export default function Home(){
               width="722.000000pt" 
               height="652.000000pt" 
               viewBox="0 0 722.000000 652.000000"
-              // viewBox="0 0 32 32"
-              // preserveAspectRatio="xMidYMid meet"
               fill="none"
               stroke="black"
               xmlns="http://www.w3.org/2000/svg"
@@ -399,5 +390,6 @@ export default function Home(){
 
     )
 }
+
 
 

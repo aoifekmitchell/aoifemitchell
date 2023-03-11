@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import get from "axios";
 
 
@@ -6,7 +6,6 @@ const Forecast = () => {
     const [posts, setPosts] = useState<any>([]); 
     const [cityName, setCityName] = useState<any>("");
     const [countryName, setCountryName] = useState<any>("");
-    // const [types, setTypes] = useState<any>([])
      const [types, setTypes] = useState<any>([])
      const [minT, setMinTemp] = useState<any>([])
      const [maxT, setMaxTemp] = useState<any>([])
@@ -20,19 +19,13 @@ const Forecast = () => {
         setPosts(data)
         GetForecast(data)
         setCityName(cityName)
-        // console.log(data.list)
         console.log(posts)
-        // console.log(types)
     }
-    // useEffect(()=> {
-    //     fetchData();
-    // },[]);
+
  
 
     const GetForecast = (data: any) => {
         console.log (data.list)
-        // let minTemp = [];
-        // let maxTemp = [];
         const minTemp: number[] = []
         const maxTemp: number[] = []
         const wtypes : string[] = []
@@ -40,13 +33,8 @@ const Forecast = () => {
         const weather : string[] = [] 
         const country : string = data.city.country
         var index = 0 
+        
         data.list.forEach((item : any) => {
-            // get max/min temperatures for each day
-            // minTemp.push(item.main.temp_min);
-            // maxTemp.push(item.main.temp_max);
-            // wDates.push(item.dt_txt);
-
-            // 2023-02-09 15:00:00
             if ((item.dt_txt.substr(11,2)== 15 && item.dt_txt != wDates[0] )|| index == 0 ){
                 console.log(item.dt_txt)
                 index +=1 
@@ -58,21 +46,17 @@ const Forecast = () => {
                 console.log(item.main.temp_max)
                 // get weather types for each day
                 if(item.weather[0].main.toLowerCase() === "rainy" || item.weather[0].main.toLowerCase() === "rain") {
-                    // let date = Object.keys(this.weatherDays).find(key => this.weatherDays[key] === val);
                     wtypes.push("Pack an umbrella!");
                 }
 
                 if(item.weather[0].main.toLowerCase() === "snow") {
-                    // let date = Object.keys(this.weatherDays).find(key => this.weatherDays[key] === val);
                     wtypes.push("Don't forget your gloves!");
                 }
 
                 if(item.weather[0].main.toLowerCase() === "clear") {
-                    // let date = Object.keys(this.weatherDays).find(key => this.weatherDays[key] === val);
                     wtypes.push("Pack some sunglasses!");
                 }
                 if(item.weather[0].main.toLowerCase() === "clouds") {
-                    // let date = Object.keys(this.weatherDays).find(key => this.weatherDays[key] === val);
                     wtypes.push("Bring a jumper!");
                 }
             }
@@ -80,7 +64,6 @@ const Forecast = () => {
         }
 
     )
-    // console.log(wtypes)
     setTypes(wtypes)
     setMinTemp(minTemp)
     setMaxTemp(maxTemp)
@@ -98,11 +81,6 @@ return (
             Please enter the name of a city <br />
             City: <input type="text" value={cityName} onChange={e => setCityName(e.target.value)}></input>
             <button onClick={fetchData}> Get Forecast </button>
-
-             {/* <h2> { JSON.stringify(posts.list)}</h2> 
-              <h2> { JSON.stringify(posts.city.name)}</h2>  
-             <h2> {types[0]} </h2> */}
-             {/* <h2> {posts.data}</h2>  */}
 
              <h3 className="table_header"> {cityName}</h3>
              <table>
@@ -151,8 +129,6 @@ return (
                     </tr>
              </tbody>
              </table>
-
-
     </div>
 )
 }

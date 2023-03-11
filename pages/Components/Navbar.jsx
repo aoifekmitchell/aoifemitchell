@@ -5,10 +5,9 @@ import Logo from "/public/images/smallLogo2.png";
 import NavItem from "./NavItem";
 
 const MENU_LIST = [
-  { text: "Home", href: "/Homepage" },
+  { text: "Home", href: "/" },
   { text: "About", href: "/AboutMe" },
   { text: "Projects", href: "/Projects" },
-//   { text: "Contact", href: "/Contact" },
 ];
 const Navbar = () => {
   const [navActive, setNavActive] = useState(null);

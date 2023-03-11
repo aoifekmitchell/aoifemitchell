@@ -15,8 +15,6 @@ const Articles = () => {
         })
         .then((data)=> {
             setPosts(data)
-
-            // console.log(posts.content)
         })
     }
     useEffect(()=> {

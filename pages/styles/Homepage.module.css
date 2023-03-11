@@ -3,17 +3,22 @@
     place-items: center;
 }
 .PP_SVG{
-    width: 80%;
-    height: 70%;
+    width: 60vw;
+    height: 70vh;
     position: relative;
-    top: -150px;
+    top: 4vh;
 }
 .myNameSVG {
     position: relative;
-    top: -550px;
+    height: 24vh;
+     top: -20vh; 
     /* color:blueviolet */
 }
 .wave{
-    position:absolute;
-    width: 80%;
+    position:relative;
+    width: 80vw;
+}
+
+.title {
+    position :relative;
 }
