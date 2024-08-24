@@ -6,21 +6,35 @@ const Forecast = () => {
     const [posts, setPosts] = useState<any>([]); 
     const [cityName, setCityName] = useState<any>("");
     const [countryName, setCountryName] = useState<any>("");
-     const [types, setTypes] = useState<any>([])
-     const [minT, setMinTemp] = useState<any>([])
-     const [maxT, setMaxTemp] = useState<any>([])
-     const [weather, setWeather] = useState<any>([])
-     const [dates, setDates] = useState<any>("");
+    const [countryCode, setCountryCode] = useState<any>("");
+    const [types, setTypes] = useState<any>([])
+    const [minT, setMinTemp] = useState<any>([])
+    const [maxT, setMaxTemp] = useState<any>([])
+    const [weather, setWeather] = useState<any>([])
+    const [dates, setDates] = useState<any>("");
+    // 
+    const [error, setError] = useState<string>("");
 
     
     const fetchData = async() => {
+        try{
         // use curly brackets to go into the object that is returned and access data
-        const {data} = await get("https://api.openweathermap.org/data/2.5/forecast?q=" +cityName+"&units=metric&appid=3e2d927d4f28b456c6bc662f34350957")
+        const {data} = await get("https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "," + countryCode + "&units=metric&appid=3e2d927d4f28b456c6bc662f34350957")
         setPosts(data)
         GetForecast(data)
         setCityName(cityName)
-        console.log(posts)
-    }
+        setCountryCode(countryCode);
+        setError(""); // Clear any previous error
+       console.log(posts)
+        } catch (error: any) {
+            if (error.response && error.response.status === 404) {
+                setError("Please enter a valid city.");
+            } else {
+                setError("An unexpected error occurred.");
+            }
+            setPosts([]); // Clear any previous data
+     }
+}
 
  
 
@@ -31,7 +45,7 @@ const Forecast = () => {
         const wtypes : string[] = []
         const wDates : string[] = []
         const weather : string[] = [] 
-        const country : string = data.city.country
+        const country: string = data.city.country
         var index = 0 
         
         data.list.forEach((item : any) => {
@@ -42,8 +56,8 @@ const Forecast = () => {
                 maxTemp.push(item.main.temp_max);
                 wDates.push(item.dt_txt.substring(0,10));
                 weather.push(item.weather[0].description);
-                console.log(item.main.temp_min)
-                console.log(item.main.temp_max)
+                // console.log(item.main.temp_min)
+                // console.log(item.main.temp_max)
                 // get weather types for each day
                 if(item.weather[0].main.toLowerCase() === "rainy" || item.weather[0].main.toLowerCase() === "rain") {
                     wtypes.push("Pack an umbrella!");
@@ -79,10 +93,15 @@ return (
             {/* <!-- enter a city to lookup --> */}
             <h3> Weather Forecast </h3>
             Please enter the name of a city <br />
-            City: <input type="text" value={cityName} onChange={e => setCityName(e.target.value)}></input>
+            City: <input type="text" value={cityName} onChange={e => setCityName(e.target.value)}></input>&nbsp;&nbsp;
+            Country Code: <input type="text" value={countryCode} onChange={e => setCountryCode(e.target.value)}></input><br />
+
             <button onClick={fetchData}> Get Forecast </button>
 
-             <h3 className="table_header"> {cityName}</h3>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+
+
+             <h3 className="table_header"> {cityName} , {countryName} </h3>
              <table>
                <tbody> 
                     <tr>
